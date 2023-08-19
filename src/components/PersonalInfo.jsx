@@ -54,6 +54,7 @@ function PersonalInfo() {
             <input
               type="tel"
               name="phone"
+              placeholder="only egyptian phone number"
               id="phone"
               {...register("phone", {
                 required: "Please enter your phone",
