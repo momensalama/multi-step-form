@@ -1,4 +1,4 @@
-function StepsContainer({ children }) {
+function StepsContainer({ children }: { children: React.ReactNode }) {
   return <div className="steps-content">{children}</div>;
 }
 

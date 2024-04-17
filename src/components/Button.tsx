@@ -1,5 +1,12 @@
+import { ButtonProps } from "../../types";
 import { useApp } from "../context/AppContext";
-function Button({ children, styling, action = "", handleClick = "" }) {
+
+function Button({
+  children,
+  styling,
+  action,
+  handleClick = () => {},
+}: ButtonProps) {
   const { curStep, setCurStep } = useApp();
 
   function handleNext() {

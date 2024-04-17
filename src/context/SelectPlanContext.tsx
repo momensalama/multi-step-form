@@ -1,9 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { useApp } from "./AppContext";
+import { SelectPlanProps } from "../../types";
 
-const SelectPlanContext = createContext();
+const SelectPlanContext = createContext({} as SelectPlanProps);
 
-function SelectPlanProvider({ children }) {
+function SelectPlanProvider({ children }: { children: React.ReactNode }) {
   const { curStep, setCurStep } = useApp();
   const [selectedPlan, setSelectedPlan] = useState({ plan: "", price: null });
   const [num, setNum] = useState(0);
@@ -32,11 +33,11 @@ function SelectPlanProvider({ children }) {
     },
   ]);
 
-  function handleClick(id) {
+  function handleClick(id: number) {
     setSelectedPlan({
       ...selectedPlan,
       plan: monthlyPlans[id].PlanName,
-      price: monthlyPlans[id].price,
+      price: monthlyPlans[id].price as any,
     });
     setNum(id + 1);
   }

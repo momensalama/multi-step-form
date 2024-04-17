@@ -1,8 +1,9 @@
 import { createContext, useContext, useState } from "react";
+import { AppProps } from "../../types";
 
-const appContext = createContext();
+const appContext = createContext({} as AppProps);
 
-function AppProvider({ children }) {
+function AppProvider({ children }: { children: React.ReactNode }) {
   const [curStep, setCurStep] = useState(1);
 
   return (

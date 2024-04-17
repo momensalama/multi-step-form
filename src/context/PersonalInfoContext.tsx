@@ -1,13 +1,14 @@
 import { createContext, useContext } from "react";
 import { useApp } from "./AppContext";
 import { useForm } from "react-hook-form";
+import { PersonalInfoProps } from "../../types";
 
-const PersonalInfoContext = createContext();
+const PersonalInfoContext = createContext({} as PersonalInfoProps);
 
 const isValidEmail = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6})*$/;
 const isValidPhone = /^(?:\+20|0)?1[0-9]{9}$/;
 
-function PersonalInfoProvider({ children }) {
+function PersonalInfoProvider({ children }: { children: React.ReactNode }) {
   const { curStep, setCurStep } = useApp();
 
   const {
@@ -16,7 +17,7 @@ function PersonalInfoProvider({ children }) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     const checkStep = curStep < 5;
     if (checkStep) {
       setCurStep((s) => s + 1);

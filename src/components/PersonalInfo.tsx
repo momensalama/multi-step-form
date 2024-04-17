@@ -70,7 +70,7 @@ function PersonalInfo() {
           </label>
         </div>
         <div className="btns next">
-          <Button type="submit" styling="next">
+          <Button action="click" styling="next">
             Next
           </Button>
         </div>

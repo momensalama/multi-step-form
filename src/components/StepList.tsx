@@ -1,4 +1,6 @@
-function StepList({ step, curStep }) {
+import { StepListProps } from "../../types";
+
+function StepList({ step, curStep }: StepListProps) {
   return (
     <li>
       <span

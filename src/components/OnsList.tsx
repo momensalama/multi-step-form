@@ -1,4 +1,6 @@
-function OnsList({ ons, onHandleToggle }) {
+import { OnsListProps } from "../../types";
+
+function OnsList({ ons, onHandleToggle }: OnsListProps) {
   return (
     <label htmlFor="chech" key={ons.id} className={ons.checked ? "active" : ""}>
       <input

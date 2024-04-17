@@ -1,9 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { useApp } from "./AppContext";
+import { AddOnsProps } from "../../types";
 
-const AddOnsContext = createContext();
+const AddOnsContext = createContext({} as AddOnsProps);
 
-function AddOnsProvider({ children }) {
+function AddOnsProvider({ children }: { children: React.ReactNode }) {
   const [addOns, setAddOns] = useState([
     {
       id: 1,
@@ -30,12 +31,12 @@ function AddOnsProvider({ children }) {
 
   const { curStep, setCurStep } = useApp();
 
-  function onSubmit(e) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (curStep < 5) setCurStep((s) => s + 1);
+    if (curStep < 5) setCurStep((s: number) => s + 1);
   }
 
-  function onHandleToggle(id) {
+  function onHandleToggle(id: number) {
     setAddOns((addOns) =>
       addOns.map((ons) =>
         ons.id === id ? { ...ons, checked: !ons.checked } : ons

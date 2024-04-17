@@ -7,7 +7,7 @@ const stepsObj = [
   { stepOrder: 4, value: "SUMMARY" },
 ];
 
-function Sidebar({ curStep }) {
+function Sidebar({ curStep }: { curStep: number }) {
   return (
     <div className="sidebar">
       <ul className="steps">
