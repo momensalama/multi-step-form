@@ -1,7 +1,7 @@
 # Project Name
 Multi Step Form
 ## Description
-the project is a multi-step form that collects user data to use this data somewhere.
+the project is a multi-step form that collects user data to use this data in somewhere.
 ## Live Demo
 click the link to [see the demo](https://multi-step-form-demo.netlify.app/)
 ## Setup
